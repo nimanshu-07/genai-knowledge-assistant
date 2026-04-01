@@ -108,3 +108,75 @@ http://localhost:8000/docs
 ### Response
 ![Response Screenshot](screenshots/response_ss.jpg)
 
+---
+
+
+## How It Works
+1.A PDF is uploaded through the /ingest endpoint.
+2.Text is extracted from the PDF using PyMuPDF.
+3.The content is split into overlapping chunks.
+4.Each chunk is converted into embeddings using sentence-transformers.
+5.The embeddings are stored in ChromaDB.
+6.When a user asks a question, the system retrieves the most relevant chunks.
+7.The retrieved context is passed to Gemini to generate a grounded answer.
+8.The API returns the final answer along with source information.
+
+---
+
+## Requirements
+fastapi==0.115.0
+uvicorn==0.30.6
+python-multipart==0.0.9
+pydantic==2.8.2
+pymupdf==1.24.9
+chromadb==0.5.5
+sentence-transformers==3.0.1
+google-generativeai==0.7.2
+python-dotenv==1.0.1
+langchain-text-splitters==0.2.4
+
+---
+
+## Running the Application
+1. Start the FastAPI server:
+    uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+
+2. Then open:
+     http://localhost:8000/docs
+
+---
+
+## Example Usage
+
+1. Ingest a PDF
+   curl -X POST "http://localhost:8000/ingest" \
+  -F "file=@sample_docs/demo.pdf"
+
+2. Ask a Question
+   curl -X POST "http://localhost:8000/query" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "question": "What does this document say about the workflow?",
+    "top_k": 5,
+    "evaluate": false
+  }'
+
+3. Example Response
+   {
+  "question": "What does this document say about the workflow?",
+  "answer": "The document explains that the workflow begins with document ingestion, followed by chunking, semantic retrieval, and answer generation.",
+  "sources": [
+    {
+      "document": "demo.pdf",
+      "page": 1,
+      "similarity_score": 0.91
+    }
+  ]
+}
+
+---
+
+
+   
+
+
