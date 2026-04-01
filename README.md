@@ -124,16 +124,16 @@ http://localhost:8000/docs
 ---
 
 ## Requirements
-fastapi==0.115.0
-uvicorn==0.30.6
-python-multipart==0.0.9
-pydantic==2.8.2
-pymupdf==1.24.9
-chromadb==0.5.5
-sentence-transformers==3.0.1
-google-generativeai==0.7.2
-python-dotenv==1.0.1
-langchain-text-splitters==0.2.4
+fastapi==0.115.0 \
+uvicorn==0.30.6 \
+python-multipart==0.0.9 \
+pydantic==2.8.2 \
+pymupdf==1.24.9 \
+chromadb==0.5.5 \
+sentence-transformers==3.0.1 \
+google-generativeai==0.7.2 \
+python-dotenv==1.0.1 \
+langchain-text-splitters==0.2.4 \
 
 ---
 
