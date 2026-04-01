@@ -48,30 +48,28 @@ User Question → Semantic Retrieval from ChromaDB → Context Assembly
                                             Gemini → Final Answer + Sources
 ```
 
-## Project Structure
+## 📁Project Structure
 
+```text
 genai-knowledge-assistant/
 ├── app/
-│   ├── main.py \
-│   ├── config.py \
-│   ├── ingestion.py \
-│   ├── vectorstore.py \
-│   ├── llm.py \
-│   ├── evaluator.py \
-│   └── schemas.py \
-├── images/
-│   ├── ui.png \
-│   ├── query-request.png \
-│   └── query-response.png \
-├── sample_docs/
-│   └── demo.pdf \
+│   ├── main.py          # FastAPI routes & app setup
+│   ├── config.py        # Settings from .env
+│   ├── ingestion.py     # PDF parsing & chunking
+│   ├── vectorstore.py   # ChromaDB vector operations
+│   ├── llm.py           # Gemini answer generation
+│   ├── evaluator.py     # Response quality evaluation
+│   └── schemas.py       # Pydantic request/response models
+├── data/
+│   ├── documents/       # Uploaded PDFs stored here
+│   └── vectorstore/     # ChromaDB persistent storage
 ├── tests/
-│   └── test_api.py \
-├── .env.example \
-├── .gitignore \
-├── requirements.txt \
-└── README.md 
+│   └── test_api.py      # Integration tests
+├── .env.example         # Environment variables template
+├── requirements.txt
+└── README.md
 
+```
 ---
 
 
