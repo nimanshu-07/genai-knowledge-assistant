@@ -75,14 +75,15 @@ genai-knowledge-assistant/
 
 
 ### API Endpoints
-Method	  Endpoint	               Description
-GET       	/	                      API info
-GET	      /health	                Health check
-POST	    /ingest	               Upload and ingest a PDF
-POST	    /query	               Ask a question using RAG
-GET	     /documents	              List ingested documents
-DELETE	/documents/{document_name}	Delete a document
-GET	       /search	                Raw semantic search
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | `/` | API info |
+| GET | `/health` | Health check |
+| POST | `/ingest` | Upload and ingest a PDF |
+| POST | `/query` | Ask a question using RAG |
+| GET | `/documents` | List ingested documents |
+| DELETE | `/documents/{document_name}` | Delete a document |
+| GET | `/search` | Raw semantic search |
 
 ---
 
@@ -174,18 +175,7 @@ langchain-text-splitters==0.2.4
 
 ---
 
-## Tech Stack
 
-- **FastAPI** — REST API framework
-- **Uvicorn** — ASGI server
-- **PyMuPDF** — PDF text extraction
-- **ChromaDB** — persistent vector database
-- **sentence-transformers** — local embedding model
-- **Gemini** — answer generation
-- **Pydantic** — request and response validation
-- **python-dotenv** — environment variable management
-- **LangChain Text Splitters** — chunking strategy
-  ---
 
 
 
