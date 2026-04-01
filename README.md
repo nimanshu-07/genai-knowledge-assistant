@@ -174,7 +174,18 @@ langchain-text-splitters==0.2.4
 
 ---
 
+## Tech Stack
 
-   
+- **FastAPI** — REST API framework
+- **Uvicorn** — ASGI server
+- **PyMuPDF** — PDF text extraction
+- **ChromaDB** — persistent vector database
+- **sentence-transformers** — local embedding model
+- **Gemini** — answer generation
+- **Pydantic** — request and response validation
+- **python-dotenv** — environment variable management
+- **LangChain Text Splitters** — chunking strategy
+  ---
+
 
 
