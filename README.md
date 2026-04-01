@@ -52,25 +52,25 @@ User Question → Semantic Retrieval from ChromaDB → Context Assembly
 
 genai-knowledge-assistant/
 ├── app/
-│   ├── main.py
-│   ├── config.py
-│   ├── ingestion.py
-│   ├── vectorstore.py
-│   ├── llm.py
-│   ├── evaluator.py
-│   └── schemas.py
+│   ├── main.py \
+│   ├── config.py \
+│   ├── ingestion.py \
+│   ├── vectorstore.py \
+│   ├── llm.py \
+│   ├── evaluator.py \
+│   └── schemas.py \
 ├── images/
-│   ├── ui.png
-│   ├── query-request.png
-│   └── query-response.png
+│   ├── ui.png \
+│   ├── query-request.png \
+│   └── query-response.png \
 ├── sample_docs/
-│   └── demo.pdf
+│   └── demo.pdf \
 ├── tests/
-│   └── test_api.py
-├── .env.example
-├── .gitignore
-├── requirements.txt
-└── README.md
+│   └── test_api.py \
+├── .env.example \
+├── .gitignore \
+├── requirements.txt \
+└── README.md \
 
 ---
 
@@ -112,14 +112,14 @@ http://localhost:8000/docs
 
 
 ## How It Works
-1.A PDF is uploaded through the /ingest endpoint.
-2.Text is extracted from the PDF using PyMuPDF.
-3.The content is split into overlapping chunks.
-4.Each chunk is converted into embeddings using sentence-transformers.
-5.The embeddings are stored in ChromaDB.
-6.When a user asks a question, the system retrieves the most relevant chunks.
-7.The retrieved context is passed to Gemini to generate a grounded answer.
-8.The API returns the final answer along with source information.
+1.A PDF is uploaded through the /ingest endpoint. \
+2.Text is extracted from the PDF using PyMuPDF. \
+3.The content is split into overlapping chunks. \
+4.Each chunk is converted into embeddings using sentence-transformers. \
+5.The embeddings are stored in ChromaDB. \
+6.When a user asks a question, the system retrieves the most relevant chunks. \
+7.The retrieved context is passed to Gemini to generate a grounded answer. \
+8.The API returns the final answer along with source information. \
 
 ---
 
@@ -138,21 +138,21 @@ langchain-text-splitters==0.2.4 \
 ---
 
 ## Running the Application
-1. Start the FastAPI server:
+1. Start the FastAPI server: \
     uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 
-2. Then open:
+2. Then open: \
      http://localhost:8000/docs
 
 ---
 
 ## Example Usage
 
-1. Ingest a PDF
+1. Ingest a PDF \
    curl -X POST "http://localhost:8000/ingest" \
   -F "file=@sample_docs/demo.pdf"
 
-2. Ask a Question
+2. Ask a Question \
    curl -X POST "http://localhost:8000/query" \
   -H "Content-Type: application/json" \
   -d '{
@@ -161,10 +161,10 @@ langchain-text-splitters==0.2.4 \
     "evaluate": false
   }'
 
-3. Example Response
+3. Example Response \
    {
-  "question": "What does this document say about the workflow?",
-  "answer": "The document explains that the workflow begins with document ingestion, followed by chunking, semantic retrieval, and answer generation.",
+  "question": "What does this document say about the workflow?", \
+  "answer": "The document explains that the workflow begins with document ingestion, followed by chunking, semantic retrieval, and answer generation.", \
   "sources": [
     {
       "document": "demo.pdf",
