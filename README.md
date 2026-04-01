@@ -97,5 +97,14 @@ http://localhost:8000/docs
 
 
 
+## Screenshots
 
+### UI
+![UI Screenshot](screenshots/UI_SS.jpg)
+
+### Question
+![Question Screenshot](screenshots/question_ss.jpg)
+
+### Response
+![Response Screenshot](screenshots/response_ss.jpg)
 
