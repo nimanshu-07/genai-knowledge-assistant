@@ -70,7 +70,7 @@ genai-knowledge-assistant/
 ├── .env.example \
 ├── .gitignore \
 ├── requirements.txt \
-└── README.md \
+└── README.md 
 
 ---
 
@@ -119,7 +119,7 @@ http://localhost:8000/docs
 5.The embeddings are stored in ChromaDB. \
 6.When a user asks a question, the system retrieves the most relevant chunks. \
 7.The retrieved context is passed to Gemini to generate a grounded answer. \
-8.The API returns the final answer along with source information. \
+8.The API returns the final answer along with source information. 
 
 ---
 
@@ -133,7 +133,7 @@ chromadb==0.5.5 \
 sentence-transformers==3.0.1 \
 google-generativeai==0.7.2 \
 python-dotenv==1.0.1 \
-langchain-text-splitters==0.2.4 \
+langchain-text-splitters==0.2.4 
 
 ---
 
